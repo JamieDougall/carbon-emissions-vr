@@ -1,0 +1,35 @@
+app,mean_kW,active,category,room,data_source_link,data_download_date,attribute_notes_html_link,attribute_notes_docx_link,attribute_notes_download_date,energy_units_kW,hrs_per_use,per_use_multiplier,use_per_day,expected_use_W,star,df_id,notes,co2_kgs_per_use,balloons_per_use
+desktop,0.6,Y,Media/communication,lounge/kitchen,,25/09/2020,,,,hour,4,4,1,200-500,FALSE,co,"estimated, not sourced from products",1.68,78.27414
+kettle,2.29375,Y,Cooking,lounge/kitchen,,25/09/2020,,,,hour,0.05,0.05,5,1200-3000,FALSE,,,0.08028125,3.74044393
+microwave,1.066666667,Y,Cooking,lounge/kitchen,,25/09/2020,,,,hour,0.1,0.1,1,600-1700,FALSE,,,0.074666667,3.478850668
+mobile,0.009791667,Y,Media/communication,lounge/kitchen,,25/09/2020,,,,hour,1,1,1,4-Jul,FALSE,,,0.006854167,0.319347631
+oven,2.8,Y,Cooking,lounge/kitchen,,25/09/2020,,,,hour,1,1,1,1200-2150,FALSE,,electric,1.96,91.31983
+stove,1.775,Y,Cooking,lounge/kitchen,,25/09/2020,,,,hour,1,1,1,2000,FALSE,,"electric, per individual element (average of 4 element total)",1.2425,57.89024938
+toaster,0.875,Y,Cooking,lounge/kitchen,,25/09/2020,,,,hour,0.05,0.05,1,800-1800,FALSE,,,0.030625,1.426872344
+vacuum,1.792,Y,Washing/cleaning,lounge/kitchen,,25/09/2020,,,,hour,1,1,1,450-1000,FALSE,,,1.2544,58.4446912
+aircon,3.168687732,Y,Temperature control,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/64/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/64/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Air_Conditioners.8143c7511123.docx,23/09/2020,hour,2,2,2,2600,TRUE,ac,,4.436162825,206.6885893
+clothes_dryer,4.456992057,Y,Washing/cleaning,bathroom/laundry,https://reg.energyrating.gov.au/comparator/product_types/35/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/35/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Clothes_Dryers.8abb50484304.docx,23/09/2020,use,3.5,1,1,1000-4000,TRUE,cd,,3.11989444,145.3613418
+lights_flourescent_compact,0.014716614,Y,Lighting,all,https://reg.energyrating.gov.au/comparator/product_types/61/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/61/heading_help/,,,hour,6,6,1,20,FALSE,cf,,0.061809779,2.879825761
+clothes_washer,1.166958078,Y,Washing/cleaning,bathroom/laundry,https://reg.energyrating.gov.au/comparator/product_types/49/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/49/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Clothes_Washers.196471c004b4.docx,23/09/2020,use,3.45,1,1,500-1800,TRUE,cw,,0.816870655,38.05943332
+dishwasher,0.69503365,Y,Washing/cleaning,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/41/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/41/search/?expired_products=on,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Dishwashers.77af556a5323.docx,23/09/2020,use,2.7,1,1,1200-1500,TRUE,dw,,0.486523555,22.66798384
+lights_flourescent_linear,0.034876238,Y,Lighting,all,https://reg.energyrating.gov.au/comparator/product_types/34/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/34/heading_help/,,,hour,6,6,1,20,FALSE,lf,,0.1464802,6.82476884
+hotwater_electric,2.174866499,Y,Bathing,bathroom/laundry,https://reg.energyrating.gov.au/comparator/product_types/58/search/?expired_products=on&export_format=csv,23/09/2020,,,,day,0.25,1,2,3800,FALSE,hw,,1.522406549,70.93158534
+lights_incandescent,0.039112816,Y,Lighting,all,https://reg.energyrating.gov.au/comparator/product_types/40/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/40/heading_help/,,,hour,6,6,1,100,FALSE,in,,0.164273827,7.653805088
+computer_monitor,0.269667156,Y,Media/communication,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/74/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/74/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Computer_Monitors.90fd2209fd7e.docx,23/09/2020,day,4,1,1,100,TRUE,mo,,0.188767009,8.794985301
+fridge_freezer,1.15942847,Y,Food storage,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/28/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/28/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Refrigerators_and_Freezers.b47fd46f2230.docx,23/09/2020,day,24,1,1,150-400,TRUE,rf,,0.811599929,37.81386099
+television,1.030541386,Y,Media/communication,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/32/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/32/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Televisions.c78152302b90.docx,23/09/2020,day,10,1,1,150,TRUE,tv,,0.72137897,33.61030863
+car/bike/transport,NA,N,,garage/outside,,,,,,,NA,NA,NA,,FALSE,,,NA,NA
+closed_control,NA,Y,,lounge/kitchen,https://reg.energyrating.gov.au/comparator/product_types/60/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/60/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Close_Control_Air_Conditioners.a0e94857ffb2.docx,23/09/2020,hour,4,4,1,1000-4000,FALSE,cc,,NA,NA
+fan,NA,N,,lounge/kitchen,,,,,,,NA,NA,NA,,NA,,,NA,NA
+game console,NA,N,,lounge/kitchen,,,,,,,NA,NA,NA,,NA,,,NA,NA
+hot water - gas,NA,N,,bathroom/laundry,https://reg.energyrating.gov.au/comparator/product_types/62/search/?expired_products=on&export_format=csv,23/09/2020,https://reg.energyrating.gov.au/comparator/product_types/62/heading_help/,https://reg.energyrating.gov.au/static/erws_comparator/common/comparator/Gas_Water_Heaters.850de29088a5.docx,23/09/2020,,NA,NA,NA,,FALSE,,not imported,NA,NA
+internet router,NA,N,,,,,,,,,NA,NA,NA,,NA,,,NA,NA
+iron,NA,N,,,,,,,,,NA,NA,NA,,NA,,,NA,NA
+laptop,NA,N,,,,,,,,,NA,NA,NA,100,NA,,,NA,NA
+multiple computers/laptops/tablets/phones,NA,N,,,,,,,,,NA,NA,NA,,NA,,,NA,NA
+pool,NA,N,,garage/outside,,,,,,,NA,NA,NA,,FALSE,,,NA,NA
+printer,NA,N,,lounge/kitchen,,,,,,,NA,NA,NA,,NA,,,NA,NA
+tools,NA,N,,garage/outside,,,,,,,NA,NA,NA,,FALSE,,,NA,NA
+treadmill,NA,N,,garage/outside,,,,,,,NA,NA,NA,,NA,,,NA,NA
+VR headset,NA,N,,lounge/kitchen,,,,,,,NA,NA,NA,,NA,,,NA,NA
+water pump,NA,N,,bathroom/laundry,,,,,,,NA,NA,NA,,NA,,,NA,NA
