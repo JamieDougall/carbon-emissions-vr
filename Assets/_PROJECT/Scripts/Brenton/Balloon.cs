@@ -1,15 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Balloon : MonoBehaviour
 {
     public float fillSpeed = 1.0f;
-    private float fillState = 0.0f;
+    private float _fillState = 0.0f;
     public float balloonMaxScale = 0.2f;
     public Rigidbody rb;
-    public Renderer rend;
     public float buoyancy = 1.0f;
     public bool buoyant = true;
     [Tooltip("Lifetime in seconds")]
@@ -23,7 +21,7 @@ public class Balloon : MonoBehaviour
 
     private void Awake()
     {
-        if (fillState < 1.0f)
+        if (_fillState < 1.0f)
         {
             rb.isKinematic = true;
             StartCoroutine(Fill());
@@ -35,19 +33,10 @@ public class Balloon : MonoBehaviour
         }
     }
 
-
-    /*
-    void Start()
-    {
-        rb.isKinematic = true;
-        StartCoroutine(Fill());
-    }
-    */
-
     public void DestroyBalloon()
     {
-        GameObject newSmoke = GameObject.Instantiate(smokePrefab, smokeSpawnPoint.position, smokeSpawnPoint.rotation);
-        GameObject.Destroy(newSmoke, 60.0f);
+        //GameObject newSmoke = GameObject.Instantiate(smokePrefab, smokeSpawnPoint.position, smokeSpawnPoint.rotation);
+        //GameObject.Destroy(newSmoke, 60.0f);
         
         GameObject newNub = GameObject.Instantiate(nubPrefab, nubSpawnPoint.position, nubSpawnPoint.rotation);
         GameObject.Destroy(newNub, 60.0f);
@@ -66,17 +55,18 @@ public class Balloon : MonoBehaviour
 
     IEnumerator Fill()
     {
-        //fillState = 0.0f;
-        while(fillState < 1.0f)
+        while(_fillState < 1.0f)
         {
-            fillState += Time.deltaTime * fillSpeed;
-            if (fillState > 1.0f)
+            _fillState += Time.deltaTime * fillSpeed;
+            if (_fillState > 1.0f)
             {
-                fillState = 1.0f;
+                _fillState = 1.0f;
             }
-            transform.localScale = Vector3.one * fillState * balloonMaxScale;
+
+            transform.localScale = Vector3.one * _fillState * balloonMaxScale;
             yield return null;
         }
+        
         rb.isKinematic = false;
         onFilled.Invoke();
         StartCoroutine(KeepUp());
