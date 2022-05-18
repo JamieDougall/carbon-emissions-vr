@@ -13,11 +13,13 @@ public class MicrowaveController : MonoBehaviour
     public float timer = 60.0f;
     public float doneMessageTimer = 3.0f;
     public float flickerFrequency, flickerAmplitude;
-    public float linearMapping; //used to be LinearMapping class from Valve
+    //public float linearMapping; //used to be LinearMapping class from Valve
+    public XRDoor door;
     public Text text;
 
-    public float powerMapping; //used to be LinearMapping class from Valve
-    private float microwavePower;
+    //public float powerMapping; //used to be LinearMapping class from Valve
+    public FloatVariable microwavePower;
+    //private float microwavePower;
     public Image[] powerImages;
     public UnityEvent onStart;
 
@@ -32,6 +34,7 @@ public class MicrowaveController : MonoBehaviour
     public Color cookedColour = Color.magenta;
     public Transform cookOrigin;
     public float cookRadius = 1.0f;
+    float lightBasePower = 0.3f;
 
     public void StartMicrowave()
     {
@@ -53,21 +56,23 @@ public class MicrowaveController : MonoBehaviour
 
     public void Update()
     {
-        microwavePower = 0;//powerMapping.value;
-        int powerMax = (int)(microwavePower * powerImages.Length);
+        //microwavePower = 0;//powerMapping.value;
+        int powerMax = (int)(microwavePower.RuntimeValue * powerImages.Length);
         for (int i = 0; i < powerImages.Length; i++)
         {
             powerImages[i].enabled = (i < powerMax);
         }
 
 
-        if (isClosed & linearMapping > 0.0f)
+        //if (isClosed & linearMapping > 0.0f)
+        if (isClosed & !door.isClosed)
         {
             isClosed = false;
             isRunning = false;
             openAudio.Play();
         }
-        else if(!isClosed && linearMapping == 0.0f)
+        //else if(!isClosed && linearMapping == 0.0f)
+        else if (!isClosed && door.isClosed)
         {
             isClosed = true;
             closeAudio.Play();
@@ -94,7 +99,8 @@ public class MicrowaveController : MonoBehaviour
                 Cookable cookable = hit.transform.GetComponent<Cookable>();
                 if (cookable != null)
                 {
-                    cookable.Cook(cookingSpeed * microwavePower);
+                    cookable.Cook(cookingSpeed * microwavePower.RuntimeValue);
+                    cookable.transform.RotateAround(plate.position, transform.up, plateRotationSpeed * Time.deltaTime);
                 }
             }
         }
@@ -110,7 +116,7 @@ public class MicrowaveController : MonoBehaviour
     IEnumerator RunMicrowave()
     {
         runAudio.Play();
-        float lightBasePower = microwaveLight.intensity;
+        //float lightBasePower = microwaveLight.intensity;
         microwaveLight.enabled = true;
         while (isRunning)
         {

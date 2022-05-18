@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Balloon : MonoBehaviour
 {
@@ -18,12 +19,15 @@ public class Balloon : MonoBehaviour
     public GameObject nubPrefab;
     public Transform nubSpawnPoint;
     public UnityEvent onFilled;
+    public bool detachFromParent = false;
+
+    public XRGrabInteractable grabInteractable;
 
     private void Awake()
     {
         if (_fillState < 1.0f)
         {
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
             StartCoroutine(Fill());
         }
         else
@@ -35,8 +39,11 @@ public class Balloon : MonoBehaviour
 
     public void DestroyBalloon()
     {
-        //GameObject newSmoke = GameObject.Instantiate(smokePrefab, smokeSpawnPoint.position, smokeSpawnPoint.rotation);
-        //GameObject.Destroy(newSmoke, 60.0f);
+        if (smokePrefab != null)
+        {
+            GameObject newSmoke = GameObject.Instantiate(smokePrefab, smokeSpawnPoint.position, smokeSpawnPoint.rotation);
+            GameObject.Destroy(newSmoke, 60.0f);
+        }
         
         GameObject newNub = GameObject.Instantiate(nubPrefab, nubSpawnPoint.position, nubSpawnPoint.rotation);
         GameObject.Destroy(newNub, 60.0f);
@@ -55,6 +62,7 @@ public class Balloon : MonoBehaviour
 
     IEnumerator Fill()
     {
+        Vector3 startPosition = transform.position;
         while(_fillState < 1.0f)
         {
             _fillState += Time.deltaTime * fillSpeed;
@@ -64,16 +72,34 @@ public class Balloon : MonoBehaviour
             }
 
             transform.localScale = Vector3.one * _fillState * balloonMaxScale;
+
+            if (transform.parent != null)
+            {
+                rb.position = transform.parent.position;
+            }
+            else
+            {
+                rb.position = startPosition;
+            }
             yield return null;
         }
         
         rb.isKinematic = false;
+
         onFilled.Invoke();
+        if (detachFromParent)
+        {
+            transform.parent = null;
+        }
         StartCoroutine(KeepUp());
+        grabInteractable.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        DestroyBalloon();
+        if (other.GetComponent<BalloonPopper>() != null)
+        {
+            DestroyBalloon();
+        }
     }
 }

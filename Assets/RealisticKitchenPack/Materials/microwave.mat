@@ -29,7 +29,7 @@ Material:
   - _OCCLUSIONMAP
   m_InvalidKeywords:
   - _METALLICGLOSSMAP
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -40,7 +40,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ae21899ef9101634686e8475724c3ef6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 80b189063b23e02479c1cc9651956800, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -60,11 +60,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: e6fd8a33fd05edd458a81a6fb732884a, type: 3}
+        m_Texture: {fileID: 2800000, guid: ebeb10de4b57aa14c94cedc82c0588fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ae21899ef9101634686e8475724c3ef6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 80b189063b23e02479c1cc9651956800, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

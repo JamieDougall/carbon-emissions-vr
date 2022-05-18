@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom Skybox
+  m_Shader: {fileID: -6465566751694194690, guid: 4eb1bed534d943e4a816ec2641a94b58,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Additional_Falloff: 0.1
+    - CloudCover: 0.167
+    - CloudHeightScaleFactor: 1
+    - FarPlaneFactor: 8.8
+    - FogHeight: 10
+    - GradientFactor: 0
+    - NoiseScale1: 0.78
+    - NoiseScale2: 0.15
+    - NoiseScale3: 0.06
+    - NoiseScaleFactor: 0.1
+    - NoiseScaleFineTuning: 1
+    - NoiseScaleFineTuningDistant: 1.42
+    - Scale: 1
+    - Scroll_Speed: 60
+    - SunBleedThroughClouds: 1
+    - SunSize: 0.2
+    - SunVisibilityThroughClouds: 0.1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors:
+    - Color1: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
+    - Color2: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    - HorizonColour: {r: 0.3820755, g: 0.8131858, b: 1, a: 0}
+    - ScrollDirection: {r: 1, g: 0, b: 0, a: 0}
+    - SkyColour: {r: 0.63403344, g: 0.9811321, b: 0.9457417, a: 0}
+    - SunColour: {r: 1, g: 0.9741212, b: 0.6650944, a: 0}
+    - SunColourThroughClouds: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &3224624975839762493
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

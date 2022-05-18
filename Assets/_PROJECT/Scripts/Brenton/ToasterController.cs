@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Events;
 
 public class ToasterController : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class ToasterController : MonoBehaviour
     public float elementHeatSpeed = 1.0f;
     public Color elementColourCool;
     public Color elementColourHot;
+    public UnityEvent onFinishedCooking;
 
     //[Header("Toaster Button")]
     //public HoverButton hoverButton;
@@ -38,6 +40,7 @@ public class ToasterController : MonoBehaviour
 
     private Coroutine changeElementColour = null;
     private Coroutine positionToastable = null;
+    private float elementProgress = 0.0f;
 
     [Header("Balloons")]
     public BalloonController balloonController;
@@ -56,6 +59,12 @@ public class ToasterController : MonoBehaviour
                 if (toastable != null)
                 {
                     ReleaseToastable();
+                    toasterLatch.Play();
+                }
+                onFinishedCooking.Invoke();
+                if (changeElementColour == null)
+                {
+                    changeElementColour = StartCoroutine(ChangeElementColour());
                 }
             }
             Cook();
@@ -81,6 +90,10 @@ public class ToasterController : MonoBehaviour
                     ToggleCooking(true);
                     return;
                 }
+                else
+                {
+                    onFinishedCooking.Invoke();
+                }
             }
         }
     }
@@ -93,25 +106,29 @@ public class ToasterController : MonoBehaviour
 
     IEnumerator ChangeElementColour()
     {
-        float progress = 0.0f;
+        //float progress = 0.0f;
         bool changingColour = true;
         bool heating = isCooking;
         while (changingColour)
         {
-            if (heating != isCooking)
+            if(isCooking)
             {
-                heating = isCooking;
-                progress = 100.0f - progress;
+                elementProgress += elementHeatSpeed * Time.deltaTime;
             }
-            progress += elementHeatSpeed * Time.deltaTime;
-            progress = Mathf.Clamp(progress, 0.0f, 100.0f);
-            if (progress == 100.0f)
+            else
+            {
+                elementProgress -= elementHeatSpeed * Time.deltaTime;
+            }
+            elementProgress = Mathf.Clamp(elementProgress, 0.0f, 100.0f);
+
+            if (elementProgress == 100.0f || elementProgress == 0.0f)
             {
                 changingColour = false;
             }
             foreach(MeshRenderer element in cookingElements)
             {
-                element.material.SetColor("_BaseColor", Cookable.GetColor(elementColourCool, elementColourHot, heating ? progress / 100.0f : 100.0f - progress / 100.0f));
+                element.material.SetColor("_BaseColor", Cookable.GetColor(elementColourCool, elementColourHot, elementProgress / 100.0f));
+                element.material.SetColor("_EmissionColor", new Color(Mathf.Lerp(0.0f, 1.0f, elementProgress / 100.0f), 0.0f, 0.0f));
             }
             yield return null;
         }
@@ -124,6 +141,7 @@ public class ToasterController : MonoBehaviour
         bool inPosition = false;
         Transform toast = toastable.transform;
         Vector3 startPosition = toast.localPosition;
+        Quaternion startRotation = toast.localRotation;
         while (!inPosition)
         {
             moveTimer += lockSpeed * Time.deltaTime;
@@ -133,6 +151,7 @@ public class ToasterController : MonoBehaviour
                 inPosition = true;
             }
             toast.localPosition = Vector3.Lerp(startPosition, Vector3.zero, moveTimer);
+            toast.localRotation = Quaternion.Slerp(startRotation, Quaternion.identity, moveTimer);
             yield return null;
         }
         positionToastable = null;
