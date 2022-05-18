@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class XRButton : MonoBehaviour
 {
-    [SerializeField] PressAxis pressAxis = PressAxis.Z;
+    //[SerializeField] PressAxis pressAxis = PressAxis.Z;
+    [SerializeField] Vector3 axis = Vector3.forward;
     [SerializeField] float pressThreshold = 0.01f;
     [SerializeField] float pressLimit = 0.02f;
     bool isPressed = false;
@@ -30,6 +31,8 @@ public class XRButton : MonoBehaviour
     void Update()
     {
         float distance = 0.0f;
+        distance = axis.x * transform.localPosition.x + axis.y * transform.localPosition.y + axis.z * transform.localPosition.z;
+        /*
         switch (pressAxis)
         {
             case PressAxis.X:
@@ -47,8 +50,13 @@ public class XRButton : MonoBehaviour
             default:
                 break;
         }
+        */
+        if (distance < 0.0f)
+        {
+            distance = 0.0f;
+            transform.localPosition = Vector3.zero;
+        }
         isPressed = distance > pressThreshold;
-
         if (isPressed)
         {
             if (wasPressed)
@@ -101,10 +109,11 @@ public class XRButton : MonoBehaviour
 
         wasPressed = isPressed;
     }
-
+    /*
     [System.Serializable]
     enum PressAxis
     {
         X, Y, Z
     };
+    */
 }

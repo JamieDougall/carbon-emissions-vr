@@ -90,11 +90,11 @@ public class ToasterController : MonoBehaviour
                     ToggleCooking(true);
                     return;
                 }
-                else
-                {
-                    onFinishedCooking.Invoke();
-                }
             }
+        }
+        else
+        {
+            onFinishedCooking.Invoke();
         }
     }
 

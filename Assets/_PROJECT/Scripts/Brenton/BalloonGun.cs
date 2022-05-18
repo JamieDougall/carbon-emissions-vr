@@ -13,7 +13,8 @@ public class BalloonGun : MonoBehaviour
     [SerializeField] LineRenderer laserLine;
     [SerializeField] Transform hitMarker;
     [SerializeField] ParticleSystem hitParticles;
-
+    [SerializeField] AudioSource laserAudio;
+    [SerializeField] AudioSource burnAudio;
     void Update()
     {
         if (shooting)
@@ -24,6 +25,10 @@ public class BalloonGun : MonoBehaviour
                 hitMarker.position = hit.point;
                 laserLine.SetPosition(1, laserLine.transform.InverseTransformPoint(hit.point));
                 hitParticles.Play();
+                if (!burnAudio.isPlaying)
+                {
+                    burnAudio.Play();
+                }
                 Balloon balloon = hit.transform.GetComponent<Balloon>();
                 if (balloon != null)
                 {
@@ -33,6 +38,10 @@ public class BalloonGun : MonoBehaviour
             else
             {
                 hitParticles.Stop();
+                if (burnAudio.isPlaying)
+                {
+                    burnAudio.Stop();
+                }
                 laserLine.SetPosition(1, Vector3.forward * laserMaxDistance);
             }
         }
@@ -45,6 +54,8 @@ public class BalloonGun : MonoBehaviour
             case GunMode.Laser:
                 shooting = true;
                 laserLine.enabled = true;
+                laserAudio.Play();
+                burnAudio.Play();
                 break;
             case GunMode.Spawner:
                 spawner.SpawnBalloons(30);
@@ -62,6 +73,8 @@ public class BalloonGun : MonoBehaviour
                 shooting = false;
                 laserLine.enabled = false;
                 hitParticles.Stop();
+                laserAudio.Stop();
+                burnAudio.Stop();
                 break;
             case GunMode.Spawner:
                 spawner.SpawnActive = false;

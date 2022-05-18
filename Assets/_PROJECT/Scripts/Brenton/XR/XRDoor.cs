@@ -6,15 +6,23 @@ using UnityEngine.Events;
 public class XRDoor : MonoBehaviour
 {
     [SerializeField] DoorAxis axis = DoorAxis.Y;
-    [SerializeField] bool invertAngle = false;
+    //[SerializeField] bool invertAngle = false;
     [SerializeField] float maxAngle = 180.0f;
-    [SerializeField] float closeAngle = 0.1f;
+    [SerializeField] float closeAngle = 0.03f;
     public bool isClosed = false;
     [SerializeField] UnityEvent onClose;
     [SerializeField] UnityEvent onOpen;
     [SerializeField] Rigidbody rb;
     float angle;
     Vector3 localStartRotation = Vector3.zero;
+
+    private void OnValidate()
+    {
+        if(rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+    }
 
     private void Start()
     {
@@ -31,6 +39,8 @@ public class XRDoor : MonoBehaviour
         switch (axis)
         {
             case DoorAxis.X:
+                angle = 1.0f - Mathf.Clamp01((maxAngle - Mathf.Abs(transform.localEulerAngles.x)) / maxAngle);
+                /*
                 if (invertAngle)
                 {
                     angle = 1.0f - Mathf.Clamp01(((-1.0f * transform.localEulerAngles.x) - maxAngle) / maxAngle);
@@ -39,8 +49,11 @@ public class XRDoor : MonoBehaviour
                 {
                     angle = 1.0f - Mathf.Clamp01((maxAngle - (transform.localEulerAngles.x)) / maxAngle);
                 }
+                */
                 break;
             case DoorAxis.Y:
+                angle = 1.0f - Mathf.Clamp01((maxAngle - Mathf.Abs(transform.localEulerAngles.y)) / maxAngle);
+                /*
                 if (invertAngle)
                 {
                     angle = 1.0f - Mathf.Clamp01(((-1.0f * transform.localEulerAngles.y) - maxAngle) / maxAngle);
@@ -49,9 +62,10 @@ public class XRDoor : MonoBehaviour
                 {
                     angle = 1.0f - Mathf.Clamp01((maxAngle - (transform.localEulerAngles.y)) / maxAngle);
                 }
+                */
                 break;
             case DoorAxis.Z:
-                angle = 1.0f - Mathf.Clamp01((maxAngle - (transform.localEulerAngles.z * (invertAngle ? -1.0f : 1.0f))) / maxAngle);
+                angle = 1.0f - Mathf.Clamp01((maxAngle - Mathf.Abs(transform.localEulerAngles.z)) / maxAngle);
                 break;
             default:
                 //angle = 0.0f;
