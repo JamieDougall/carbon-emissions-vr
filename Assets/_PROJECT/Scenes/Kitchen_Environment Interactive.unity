@@ -4479,8 +4479,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 7369724068022960709, guid: 26a3f0e7661065f439444b4ebef9696e,
-    type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -8414,80 +8413,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1392040168}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1113959592
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.186
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.249
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478761, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478763, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_Name
-      value: XR Origin
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364038485144478763, guid: 8922f7d3a29431343bc57c536d21ed26,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8922f7d3a29431343bc57c536d21ed26, type: 3}
 --- !u!1 &1124471955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11123,8 +11048,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 7369724068022960709, guid: 26a3f0e7661065f439444b4ebef9696e,
-    type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -11922,6 +11846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 180557533655662575, guid: 930b7a19d446f4b4c9c810e37e84e625,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 497982216308674865, guid: 930b7a19d446f4b4c9c810e37e84e625,
         type: 3}
@@ -13912,6 +13841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 180557533655662575, guid: 930b7a19d446f4b4c9c810e37e84e625,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 497982216308674865, guid: 930b7a19d446f4b4c9c810e37e84e625,
         type: 3}
