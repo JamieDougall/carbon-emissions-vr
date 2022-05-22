@@ -58,7 +58,7 @@ MonoBehaviour:
   buoyancy: 1
   buoyant: 1
   smokeLifetime: 60
-  smokePrefab: {fileID: 1589571556578921737, guid: 9c6bb33b165b4784893a7b5de889e55c,
+  smokePrefab: {fileID: 2370879897477828532, guid: baed2fa6dc292d848a3398bcbe5f512d,
     type: 3}
   smokeSpawnPoint: {fileID: 1360481068898774714}
   nubPrefab: {fileID: 7894430960936742434, guid: 22092e240f2b119478eba435715284c6,
