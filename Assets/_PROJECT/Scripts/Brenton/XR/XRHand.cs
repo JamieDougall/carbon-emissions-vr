@@ -18,6 +18,11 @@ public class XRHand : MonoBehaviour
     [SerializeField] GameObject directInteractor;
     [SerializeField] GameObject rayInteractor;
 
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+    [SerializeField] InputAction trigger;
+    [SerializeField] InputAction grip;
+
     private void OnEnable()
     {
         if (toggleRayInteractor != null)
@@ -26,8 +31,9 @@ public class XRHand : MonoBehaviour
             toggleRayInteractor.action.canceled += (c) => ToggleRay(false);
             toggleRayInteractor.action.Enable();
         }
+        trigger.Enable();
+        grip.Enable();
     }
-
     private void OnDisable()
     {
         if (toggleRayInteractor != null)
@@ -36,7 +42,28 @@ public class XRHand : MonoBehaviour
             toggleRayInteractor.action.canceled -= (c) => ToggleRay(false);
             toggleRayInteractor.action.Disable();
         }
+        trigger.Disable();
+        grip.Disable();
     }
+
+    private void Update()
+    {
+        float t = trigger.ReadValue<float>();
+        SetTriggerAnimation(t);
+        float g = grip.ReadValue<float>();
+        SetGripAnimation(g);
+    }
+
+    private void SetTriggerAnimation(float value)
+    {
+        animator.SetFloat("trigger", value);
+    }
+
+    private void SetGripAnimation(float value)
+    {
+        animator.SetFloat("grip", value);
+    }
+
 
     private void ToggleRay(bool toggle)
     {
