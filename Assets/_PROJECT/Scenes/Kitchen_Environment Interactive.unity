@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2851,8 +2851,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: 0.125
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -20140,7 +20140,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.9, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -5.7749996, y: 2.5, z: -2.3500001}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -24261,7 +24261,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.02300002, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -5.742435, y: 1.1893, z: -3.3481529}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -26138,7 +26138,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.9, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -5.7749996, y: 2.5, z: -3.8500001}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -28499,7 +28499,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.75, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -5.625, y: 0.9499998, z: -3.8500001}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -37963,7 +37963,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000011920932, y: 0.03991288, z: 0.9287344}
+  m_ConnectedAnchor: {x: -5.6270003, y: 0.27109998, z: -2.05}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -48165,7 +48165,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.09834869, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -5.472, y: 0.9483486, z: -1.45}
+  m_ConnectedAnchor: {x: -5.585, y: 0.9483486, z: -1.45}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -48594,7 +48594,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8a5c31ded46143846b245dca342b05a3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a5c31ded46143846b245dca342b05a3,
         type: 3}
