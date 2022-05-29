@@ -13,7 +13,7 @@ public class CarbonPlotter : MonoBehaviour
     {
         if (balloonControllers == null)
         {
-            balloonControllers = GameObject.FindObjectsOfType<BalloonController>();
+            balloonControllers = GameObject.FindObjectsOfType<BalloonController>().Where(p => !string.IsNullOrWhiteSpace(p.Appliance)).ToArray();
         }
         plot.bins = balloonControllers.Select(s => new Plot.Bin(s.Appliance, s.GetSpawnTotal() * carbonPerBalloon)).ToArray();
         plot.title = "Your Household Carbon Emissions";
@@ -21,7 +21,7 @@ public class CarbonPlotter : MonoBehaviour
         plot.yLabel = "Carbon Emissions (kg CO2 equivalent)";
         plot.DrawBarPlot();
     }
-    
+
     void Update()
     {
         timer += Time.deltaTime;
