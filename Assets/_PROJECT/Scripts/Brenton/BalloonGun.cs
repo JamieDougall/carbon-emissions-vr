@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BalloonGun : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class BalloonGun : MonoBehaviour
     [SerializeField] ParticleSystem hitParticles;
     [SerializeField] AudioSource laserAudio;
     [SerializeField] AudioSource burnAudio;
+    XRGrabInteractable grabInteractable;
+
+    private void Awake()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+    }
     void Update()
     {
         if (shooting)
@@ -49,6 +56,10 @@ public class BalloonGun : MonoBehaviour
 
     public void PullTrigger()
     {
+        if (!grabInteractable.isSelected)
+        {
+            return;
+        }
         switch (mode)
         {
             case GunMode.Laser:
